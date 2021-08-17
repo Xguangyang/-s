@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TMS.API</name>
+    </assembly>
+    <members>
+        <member name="T:TMS.API.Controllers.CarManageController">
+            <summary>
+            车辆管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.CarManageController.#ctor(Microsoft.Extensions.Logging.ILogger{TMS.API.Controllers.CarManageController},TMS.IRepository.ICarManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.CarManageController.CarManageIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.ExceptionFilterController">
+            <summary>
+            测试异常处理
+            </summary>
+        </member>
+        <member name="T:TMS.API.Controllers.OperatorManageController">
+            <summary>
+            操作员管理
+            </summary>
+        </member>
+        <member name="T:TMS.API.Controllers.UsersController">
+            <summary>
+            用户基本信息
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersController.#ctor(TMS.IRepository.IUsersRepository,TMS.Common.JWT.JWTService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersController.CarManageIndex(System.String)">
+            <summary>
+            操作员列表（显示）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.WeatherForecastController">
+            <summary>
+            测试
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.WeatherForecastController.Get">
+            <summary>
+            这是个小测试（嘻嘻嘻）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TMS.API.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            自动依赖注入
+            </summary>
+            <param name="builder"></param>
+        </member>
+    </members>
+</doc>

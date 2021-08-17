@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entity\Personnel\" />
+    <Folder Include="Entity\Contract\" />
+    <Folder Include="Entity\CloseAccount\" />
+    <Folder Include="Entity\GoodsMaterial\" />
+    <Folder Include="Entity\MainTain\" />
+    <Folder Include="Entity\TailAfter\" />
+    <Folder Include="Entity\ApprovalProcess\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+</Project>
