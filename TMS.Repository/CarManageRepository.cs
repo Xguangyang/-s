@@ -24,40 +24,49 @@ namespace TMS.Repository
         }
 
 
-        public bool AddPositionManage(CarManage position)
+        public bool AddCarManage(CarManage car)
         {
-            string sql = "insert into CarManage values(null,@PositionName,@PositionParentId,@Alias,@PositionCreateDate)";
+            string sql = "insert into CarManage values(null,@FactoryPlate,@CarPlate,@DriverName,@SubordinateCompany,@Cartype,@CarColor,@BuyDate,@OperationPlate,@InsuranceExpriration,@AnnualInspection,@UpKeepKm,@CarPicture,@UpKeepKmPicture)";
             return MySqlDapper.DapperExcute(sql, new
             {
-                @PositionName = position.PositionName,
-                @PositionParentId = position.PositionParentId,
-                @Alias = position.Alias,
-                @PositionCreateDate = position.PositionCreateDate
+                @FactoryPlate = car.FactoryPlate,
+                @CarPlate = car.CarPlate,
+                @DriverName = car.DriverName,
+                @SubordinateCompany = car.SubordinateCompany,
+                @Cartype = car.Cartype,
+                @CarColor = car.CarColor,
+                @BuyDate = car.BuyDate,
+                @OperationPlate = car.OperationPlate,
+                @InsuranceExpriration = car.InsuranceExpriration,
+                @AnnualInspection = car.AnnualInspection,
+                @UpKeepKm = car.UpKeepKm,
+                @CarPicture = car.CarPicture,
+                @UpKeepKmPicture = car.UpKeepKmPicture            
             });
         }
 
 
         /// <summary>
-        /// 根据职位Id删除职位
+        /// 根据Id删除
         /// </summary>
-        /// <param name="PositionManageId"></param>
+        /// <param name="CarManageId"></param>
         /// <returns></returns>
-        public bool DeletePosition(int PositionManageId)
+        public bool DeleteCar(int CarManageId)
         {
-            string sql = "DELETE FROM CarManage WHERE PositionManageId IN (@PositionManageId)";
-            return MySqlDapper.DapperExcute(sql, new { @PositionManageId = PositionManageId });
+            string sql = "DELETE FROM CarManage WHERE CarManageId IN (@CarManageId)";
+            return MySqlDapper.DapperExcute(sql, new { @CarManageId = CarManageId });
         }
 
 
         /// <summary>
         /// 反填改职位
         /// </summary>
-        /// <param name="PositionManageId"></param>
+        /// <param name="CarManageId"></param>
         /// <returns></returns>
-        public PositionManage EditPositionManage(int PositionManageId)
+        public CarManage EditPositionManage(int CarManageId)
         {
-            string sql = $"select * from CarManage";
-            return MySqlDapper.DapperQuery<PositionManage>(sql, new { @PositionManageId = PositionManageId }).FirstOrDefault();
+            string sql = $"select * from CarManage where CarManageId={CarManageId}";
+            return MySqlDapper.DapperQuery<CarManage>(sql, new { @CarManageId = CarManageId }).FirstOrDefault();
         }
 
         /// <summary>
@@ -65,16 +74,24 @@ namespace TMS.Repository
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public bool UpdatePosition(PositionManage position)
+        public bool UpdateCar(CarManage car)
         {
-            string sql = "UPDATE PositionManage SET PositionName = @PositionName,PositionParentId = @PositionParentId,Alias = @Alias,PositionCreateDate = @PositionCreateDate WHERE PositionManageId=@PositionManageId; ";
+            string sql = "UPDATE CarManage SET @FactoryPlate = car.FactoryPlate,CarPlate = @CarPlate,DriverName = @DriverName,SubordinateCompany =@SubordinateCompany,Cartype = @Cartype,CarColor = @CarColor,BuyDate = @BuyDate,OperationPlate = @OperationPlate,InsuranceExpriration = @InsuranceExpriration,AnnualInspection = @AnnualInspection,UpKeepKm = @UpKeepKm,CarPicture = @CarPicture,UpKeepKmPicture = @UpKeepKmPicture WHERE CarManageId=@CarManageId; ";
             return MySqlDapper.DapperExcute(sql, new
             {
-                @PositionManageId = position.PositionManageId,
-                @PositionName = position.PositionName,
-                @PositionParentId = position.PositionParentId,
-                @Alias = position.Alias,
-                @PositionCreateDate = position.PositionCreateDate
+                @FactoryPlate = car.FactoryPlate,
+                @CarPlate = car.CarPlate,
+                @DriverName = car.DriverName,
+                @SubordinateCompany = car.SubordinateCompany,
+                @Cartype = car.Cartype,
+                @CarColor = car.CarColor,
+                @BuyDate = car.BuyDate,
+                @OperationPlate = car.OperationPlate,
+                @InsuranceExpriration = car.InsuranceExpriration,
+                @AnnualInspection = car.AnnualInspection,
+                @UpKeepKm = car.UpKeepKm,
+                @CarPicture = car.CarPicture,
+                @UpKeepKmPicture = car.UpKeepKmPicture
             });
         }
 
