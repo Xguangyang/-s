@@ -112,6 +112,7 @@ namespace TMS.API
             }));
             #endregion
 
+
             #region 数据库连接
             DbFactory.DbConString = Configuration.GetConnectionString("MySql");
             #endregion
@@ -154,7 +155,10 @@ namespace TMS.API
             loggerFactory.AddFile("Logs/log{Date}.txt");
             #endregion
 
-            
+            #region 跨域
+            app.UseCors("AllowAll");
+            #endregion
+
 
             app.UseRouting();
 

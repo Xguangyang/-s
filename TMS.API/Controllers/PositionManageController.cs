@@ -9,34 +9,34 @@ using TMS.Model.Entity.Set;
 namespace TMS.API.Controllers
 {
     /// <summary>
-    /// 操作员管理
+    /// 职位管理
     /// </summary>
     [ApiController]
-    [Route("OperatorManageApi")]
-    public class OperatorManageController : Controller
+    [Route("PositionManageApi")]
+    public class PositionManageController : Controller
     {
-        private IOperatorManageRepository dal;
+        private IPositionManageRepository dal;
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="_dal"></param>
-        public OperatorManageController(IOperatorManageRepository _dal)
+        public PositionManageController(IPositionManageRepository _dal)
         {
             dal = _dal;
         }
 
 
         /// <summary>
-        /// 操作员管理显示
+        /// 职位管理显示
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("OperatorManageIndex")]
-        public IActionResult OperatorManageIndex()
+        [Route("PositionManageIndex")]
+        public IActionResult PositionManageIndex()
         {
             try
             {
-                List<OperatorManage> list = dal.OperatorManageShow();
+                List<PositionManage> list = dal.PositionManageShow();
                 return Json(list);
             }
             catch (Exception)
@@ -47,17 +47,18 @@ namespace TMS.API.Controllers
 
 
         /// <summary>
-        /// 新增操作员
+        /// 新增职位
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [Route("AddOperatorManage")]
-        public IActionResult AddOperatorManage(OperatorManage operatorManage)
+        [Route("AddPositionManage")]
+        public IActionResult AddPositionManage(PositionManage position)
         {
             try
             {
-                bool result = dal.AddOperatorManage(operatorManage);
-                return Json(result);
+                 bool result = dal.AddPositionManage(position);
+                 return Json(result);
+                
             }
             catch (Exception)
             {
@@ -66,17 +67,17 @@ namespace TMS.API.Controllers
         }
 
         /// <summary>
-        /// 删除操作员
+        /// 删除该职位
         /// </summary>
-        /// <param name="OperatorManageId"></param>
+        /// <param name="PositionManageId"></param>
         /// <returns></returns>
-        [Route("OperatorDel")]
+        [Route("PositionDel")]
         [HttpPost]
-        public IActionResult OperatorDel(int OperatorManageId)
+        public IActionResult PositionDel(int PositionManageId)
         {
             try
             {
-                bool result = dal.DeleteOperator(OperatorManageId);
+                bool result = dal.DeletePosition(PositionManageId);
                 return Json(result);
             }
             catch (Exception)
@@ -86,17 +87,17 @@ namespace TMS.API.Controllers
         }
 
         /// <summary>
-        /// 反填该操作员
+        /// 反填该职位
         /// </summary>
-        /// <param name="OperatorManageId"></param>
+        /// <param name="PositionManageId"></param>
         /// <returns></returns>
-        [Route("EditOperator")]
+        [Route("EditPosition")]
         [HttpPost]
-        public IActionResult EditOperator(int OperatorManageId)
+        public IActionResult EditPosition(int PositionManageId)
         {
             try
             {
-                OperatorManage result = dal.EditOperatorManage(OperatorManageId);
+                PositionManage result = dal.EditPositionManage(PositionManageId);
                 return Json(result);
             }
             catch (Exception)
@@ -107,17 +108,17 @@ namespace TMS.API.Controllers
 
 
         /// <summary>
-        /// 修改该操作员
+        /// 修改该职位
         /// </summary>
-        /// <param name="operatorManage"></param>
+        /// <param name="position"></param>
         /// <returns></returns>
-        [Route("UpdateOperatorManage")]
+        [Route("UpdatePositionManage")]
         [HttpPost]
-        public IActionResult UpdateOperatorManage(OperatorManage operatorManage)
+        public IActionResult UpdatePositionManage(PositionManage position)
         {
             try
             {
-                bool result = dal.UpdateOperator(operatorManage);
+                bool result = dal.UpdatePosition(position);
                 return Ok(result);
             }
             catch (Exception)
@@ -128,5 +129,4 @@ namespace TMS.API.Controllers
 
 
     }
-
 }

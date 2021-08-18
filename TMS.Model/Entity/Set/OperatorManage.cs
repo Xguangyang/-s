@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TMS.Model.Entity.Set
 {
+    /// <summary>
+    /// 操作员管理
+    /// </summary>
     public class OperatorManage
     {
         /// <summary>

@@ -40,7 +40,7 @@ namespace TMS.API.Controllers
         {
             try
             {
-                List<CarManage> list = dal.Show();
+                List<CarManage> list = dal.CarShow();
                 _logger.LogInformation("======{p1}======{p2}======", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff 成功"), list.Count.ToString());
                 return Json(list);
             }

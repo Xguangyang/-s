@@ -9,6 +9,6 @@ namespace TMS.IRepository
 {
     public interface ICarManageRepository
     {
-        List<CarManage> Show();
+        List<CarManage> CarShow();
     }
 }

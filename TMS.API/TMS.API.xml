@@ -31,6 +31,89 @@
             操作员管理
             </summary>
         </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.#ctor(TMS.IRepository.IOperatorManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.OperatorManageIndex">
+            <summary>
+            操作员管理显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.AddOperatorManage(TMS.Model.Entity.Set.OperatorManage)">
+            <summary>
+            新增操作员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.OperatorDel(System.Int32)">
+            <summary>
+            删除操作员
+            </summary>
+            <param name="OperatorManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.EditOperator(System.Int32)">
+            <summary>
+            反填该操作员
+            </summary>
+            <param name="OperatorManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OperatorManageController.UpdateOperatorManage(TMS.Model.Entity.Set.OperatorManage)">
+            <summary>
+            修改该操作员
+            </summary>
+            <param name="operatorManage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.PositionManageController">
+            <summary>
+            职位管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.#ctor(TMS.IRepository.IPositionManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.PositionManageIndex">
+            <summary>
+            职位管理显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.AddPositionManage(TMS.Model.Entity.Set.PositionManage)">
+            <summary>
+            新增职位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.PositionDel(System.Int32)">
+            <summary>
+            删除该职位
+            </summary>
+            <param name="PositionManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.EditPosition(System.Int32)">
+            <summary>
+            反填该职位
+            </summary>
+            <param name="PositionManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PositionManageController.UpdatePositionManage(TMS.Model.Entity.Set.PositionManage)">
+            <summary>
+            修改该职位
+            </summary>
+            <param name="position"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.UsersController">
             <summary>
             用户基本信息
@@ -42,7 +125,7 @@
             </summary>
             <param name="_dal"></param>
         </member>
-        <member name="M:TMS.API.Controllers.UsersController.CarManageIndex(System.String)">
+        <member name="M:TMS.API.Controllers.UsersController.LoginIndex(System.String,System.String)">
             <summary>
             操作员列表（显示）
             </summary>

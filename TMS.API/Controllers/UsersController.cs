@@ -20,7 +20,7 @@ namespace TMS.API.Controllers
     /// 用户基本信息
     /// </summary>
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("UsersApi")]
     public class UsersController : Controller
     {
@@ -36,18 +36,28 @@ namespace TMS.API.Controllers
             _jwt = jwt;
         }
 
+
+
+
         /// <summary>
         /// 操作员列表（显示）
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("CarManageIndex")]
-        public IActionResult CarManageIndex(string i)
+        [Route("LoginIndex")]
+        [AllowAnonymous]//不用Jwt验证
+        public IActionResult LoginIndex(string OperatorPhone,string OperatorPwd)
         {
             try
             {
-                List<OperatorManage> list = dal.Show();
-                var jwt = _jwt.GetToken(i);
+                int a=0;
+                List<OperatorManage> list = dal.LoginShow(OperatorPhone,OperatorPwd);
+                var jwt = _jwt.GetToken(OperatorPwd);
+                if (list.Count>0)
+                {
+                    a = 1;
+                    return Json(a);
+                }
                 return Json(jwt);
             }
             catch (Exception)

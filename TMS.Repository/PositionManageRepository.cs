@@ -1,32 +1,35 @@
-﻿using Dapper;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TMS.Common.DB;
 using TMS.IRepository;
-using TMS.Model.Entity.BaseInfo;
-using TMS.Common.DB;
+using TMS.Model.Entity.Set;
 
 namespace TMS.Repository
 {
-    public class CarManageRepository:ICarManageRepository
+    public class PositionManageRepository: IPositionManageRepository
     {
+
         /// <summary>
-        /// 车辆管理显示
+        /// 职位显示
         /// </summary>
         /// <returns></returns>
-        public List<CarManage> CarShow()
+        public List<PositionManage> PositionManageShow()
         {
-            string sql = $"select * from CarManage";
-            return MySqlDapper.DapperQuery<CarManage>(sql, "");
+            string sql = $"select * from PositionManage";
+            return MySqlDapper.DapperQuery<PositionManage>(sql, "");
         }
 
-
-        public bool AddPositionManage(CarManage position)
+        /// <summary>
+        /// 新增职位
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public bool AddPositionManage(PositionManage position)
         {
-            string sql = "insert into CarManage values(null,@PositionName,@PositionParentId,@Alias,@PositionCreateDate)";
+            string sql = "insert into PositionManage values(null,@PositionName,@PositionParentId,@Alias,@PositionCreateDate)";
             return MySqlDapper.DapperExcute(sql, new
             {
                 @PositionName = position.PositionName,
@@ -44,7 +47,7 @@ namespace TMS.Repository
         /// <returns></returns>
         public bool DeletePosition(int PositionManageId)
         {
-            string sql = "DELETE FROM CarManage WHERE PositionManageId IN (@PositionManageId)";
+            string sql = "DELETE FROM PositionManage WHERE PositionManageId IN (@PositionManageId)";
             return MySqlDapper.DapperExcute(sql, new { @PositionManageId = PositionManageId });
         }
 
@@ -56,7 +59,7 @@ namespace TMS.Repository
         /// <returns></returns>
         public PositionManage EditPositionManage(int PositionManageId)
         {
-            string sql = $"select * from CarManage";
+            string sql = $"select * from PositionManage";
             return MySqlDapper.DapperQuery<PositionManage>(sql, new { @PositionManageId = PositionManageId }).FirstOrDefault();
         }
 
@@ -77,6 +80,7 @@ namespace TMS.Repository
                 @PositionCreateDate = position.PositionCreateDate
             });
         }
+
 
 
     }

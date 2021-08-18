@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using TMS.Common.DB;
 using TMS.IRepository;
 using TMS.Model.Entity.Set;
-using TMS.IRepository;
 using TMS.Model.Entity.BaseInfo;
 using Dapper;
 
@@ -20,12 +19,10 @@ namespace TMS.Repository
     /// </summary>
     public class UsersRepository : IUsersRepository
     {
-        public List<OperatorManage> Show()
+        public List<OperatorManage> LoginShow(string OperatorPhone, string OperatorPwd)
         {
-            using (IDbConnection conn = new MySqlConnection(DbFactory.DbConString))
-            {
-                return conn.Query<OperatorManage>("select * from OperatorManage").ToList();
-            }
+            string sql = $"select * from OperatorManage where OperatorPhone={OperatorPhone} and OperatorPwd={OperatorPwd}";
+            return MySqlDapper.DapperQuery<OperatorManage>(sql, "");
         }
     }
 }

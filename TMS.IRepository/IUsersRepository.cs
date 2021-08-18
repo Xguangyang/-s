@@ -11,6 +11,6 @@ namespace TMS.IRepository
     public interface IUsersRepository
     {
         //显示查询
-        List<OperatorManage> Show();
+        List<OperatorManage> LoginShow(string OperatorPhone, string OperatorPwd);
     }
 }
