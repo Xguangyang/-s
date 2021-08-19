@@ -44,7 +44,7 @@ namespace TMS.Model.Entity.BaseInfo
         /// <summary>
         /// 驾驶证照片
         /// </summary>
-        public string carCardPicture { get; set; }
+        public string CarCardPicture { get; set; }
 
         /// <summary>
         /// 备注

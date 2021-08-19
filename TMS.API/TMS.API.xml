@@ -21,6 +21,79 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:TMS.API.Controllers.CarManageController.AddCarManage(TMS.Model.Entity.BaseInfo.CarManage)">
+            <summary>
+            新增汽车
+            </summary>
+            <param name="car"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarManageController.CarDel(System.Int32)">
+            <summary>
+            删除操作员
+            </summary>
+            <param name="CarManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarManageController.EditCar(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="CarManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarManageController.UpdateCarManage(TMS.Model.Entity.BaseInfo.CarManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="car"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.DepartMentController">
+            <summary>
+            部门管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.#ctor(TMS.IRepository.IDepartMentRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.DepartMentIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.AddDepartMent(TMS.Model.Entity.Set.DepartMent)">
+            <summary>
+            新增
+            </summary>
+            <param name="depart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.DepartMentDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="DepartMentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.EditEditDepart(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="DepartMentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.DepartMentController.UpdateRole(TMS.Model.Entity.Set.DepartMent)">
+            <summary>
+            修改
+            </summary>
+            <param name="depart"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.ExceptionFilterController">
             <summary>
             测试异常处理
@@ -70,6 +143,96 @@
             <param name="operatorManage"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.OutSourceManageController">
+            <summary>
+            外协管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.#ctor(TMS.IRepository.IOutSourceManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.OutSourceManageIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.AddOutSourceManage(TMS.Model.Entity.BaseInfo.OutSourceManage)">
+            <summary>
+            新增
+            </summary>
+            <param name="outSource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.DepartMentDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="OutSourceManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.EditOutSourceManage(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="OutSourceManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutSourceManageController.UpdateOutSourceManage(TMS.Model.Entity.BaseInfo.OutSourceManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="outSource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.OwnerManageController">
+            <summary>
+            货主管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.#ctor(TMS.IRepository.IOwnerManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.OwnerManageIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.AddOwnerManage(TMS.Model.Entity.BaseInfo.OwnerManage)">
+            <summary>
+            新增
+            </summary>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.OwnerManageDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="OwnerManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.EditOwnerManage(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="OwnerManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerManageController.UpdateOwnerManage(TMS.Model.Entity.BaseInfo.OwnerManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.PositionManageController">
             <summary>
             职位管理
@@ -112,6 +275,51 @@
             修改该职位
             </summary>
             <param name="position"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.RoleModelController">
+            <summary>
+            角色管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.#ctor(TMS.IRepository.IRoleModeRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.RoleModelIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.AddRoleModel(TMS.Model.Entity.Set.RoleModel)">
+            <summary>
+            新增
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.RoleModelDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="RoleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.EditRole(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="RoleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RoleModelController.UpdateRole(TMS.Model.Entity.Set.RoleModel)">
+            <summary>
+            修改
+            </summary>
+            <param name="role"></param>
             <returns></returns>
         </member>
         <member name="T:TMS.API.Controllers.UsersController">

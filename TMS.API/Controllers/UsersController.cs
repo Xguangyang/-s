@@ -56,9 +56,9 @@ namespace TMS.API.Controllers
                 if (list.Count>0)
                 {
                     a = 1;
-                    return Json(a);
+                  
                 }
-                return Json(jwt);
+                return Json(a);
             }
             catch (Exception)
             {

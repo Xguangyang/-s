@@ -1,32 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMS.IRepository;
-using TMS.Model.Entity.BaseInfo;
-using Microsoft.AspNetCore.Authorization;//JWT
+using TMS.Model.Entity.Set;
 
 namespace TMS.API.Controllers
 {
     /// <summary>
-    /// 车辆管理
+    /// 部门管理
     /// </summary>
-    [ApiController]
     //[Authorize]
-    [Route("CarManageApi")]
-    public class CarManageController : Controller
+    [ApiController]
+    [Route("DepartMentApi")]
+    public class DepartMentController : Controller
     {
-        private ILogger<CarManageController> _logger;//日志
-        private ICarManageRepository dal;
+        private IDepartMentRepository dal;
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="_dal"></param>
-        public CarManageController(ILogger<CarManageController> logger, ICarManageRepository _dal)
+        public DepartMentController(IDepartMentRepository _dal)
         {
-            _logger = logger;//日志
             dal = _dal;
         }
 
@@ -35,36 +31,33 @@ namespace TMS.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("CarManageIndex")]
-        public IActionResult CarManageIndex()
+        [Route("DepartMentIndex")]
+        public IActionResult DepartMentIndex()
         {
             try
             {
-                List<CarManage> list = dal.CarShow();
-                _logger.LogInformation("======{p1}======{p2}======", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff 成功"), list.Count.ToString());
+                List<DepartMent> list = dal.DepartMentShow();
                 return Json(list);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogError(ex, "##{p1}## CarManageController-CarManageIndex() Exception", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss 报错啦！！！"));
-                return Json("{'result':'error'}");
                 throw;
             }
-            
+
         }
 
         /// <summary>
-        /// 新增汽车
+        /// 新增
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="depart"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("AddCarManage")]
-        public IActionResult AddCarManage(CarManage car)
+        [Route("AddDepartMent")]
+        public IActionResult AddDepartMent(DepartMent depart)
         {
             try
             {
-                bool result = dal.AddCarManage(car);
+                bool result = dal.AddDepartMent(depart);
                 return Json(result);
             }
             catch (Exception)
@@ -74,17 +67,17 @@ namespace TMS.API.Controllers
         }
 
         /// <summary>
-        /// 删除操作员
+        /// 删除
         /// </summary>
-        /// <param name="CarManageId"></param>
+        /// <param name="DepartMentId"></param>
         /// <returns></returns>
-        [Route("CarDel")]
+        [Route("DepartMentDel")]
         [HttpPost]
-        public IActionResult CarDel(int CarManageId)
+        public IActionResult DepartMentDel(int DepartMentId)
         {
             try
             {
-                bool result = dal.DeleteCar(CarManageId);
+                bool result = dal.DeleteDepartMent(DepartMentId);
                 return Json(result);
             }
             catch (Exception)
@@ -96,15 +89,15 @@ namespace TMS.API.Controllers
         /// <summary>
         /// 反填
         /// </summary>
-        /// <param name="CarManageId"></param>
+        /// <param name="DepartMentId"></param>
         /// <returns></returns>
-        [Route("EditCar")]
+        [Route("EditEditDepart")]
         [HttpPost]
-        public IActionResult EditCar(int CarManageId)
+        public IActionResult EditEditDepart(int DepartMentId)
         {
             try
             {
-                CarManage result = dal.EditCarManage(CarManageId);
+                DepartMent result = dal.EditDepartMent(DepartMentId);
                 return Json(result);
             }
             catch (Exception)
@@ -117,15 +110,15 @@ namespace TMS.API.Controllers
         /// <summary>
         /// 修改
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="depart"></param>
         /// <returns></returns>
-        [Route("UpdateCarManage")]
+        [Route("UpdateDepartMent")]
         [HttpPost]
-        public IActionResult UpdateCarManage(CarManage car)
+        public IActionResult UpdateRole(DepartMent depart)
         {
             try
             {
-                bool result = dal.UpdateCar(car);
+                bool result = dal.UpdateDepartMent(depart);
                 return Ok(result);
             }
             catch (Exception)
@@ -133,10 +126,5 @@ namespace TMS.API.Controllers
                 return Ok("数据错误");
             }
         }
-
-
-
-
-
     }
 }

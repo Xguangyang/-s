@@ -59,7 +59,7 @@ namespace TMS.Repository
         /// <returns></returns>
         public PositionManage EditPositionManage(int PositionManageId)
         {
-            string sql = $"select * from PositionManage";
+            string sql = $"select * from PositionManage where PositionManageId={PositionManageId}";
             return MySqlDapper.DapperQuery<PositionManage>(sql, new { @PositionManageId = PositionManageId }).FirstOrDefault();
         }
 

@@ -1,32 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMS.IRepository;
 using TMS.Model.Entity.BaseInfo;
-using Microsoft.AspNetCore.Authorization;//JWT
 
 namespace TMS.API.Controllers
 {
     /// <summary>
-    /// 车辆管理
+    /// 货主管理
     /// </summary>
-    [ApiController]
     //[Authorize]
-    [Route("CarManageApi")]
-    public class CarManageController : Controller
+    [ApiController]
+    [Route("OwnerManageApi")]
+    public class OwnerManageController : Controller
     {
-        private ILogger<CarManageController> _logger;//日志
-        private ICarManageRepository dal;
+        private IOwnerManageRepository dal;
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="_dal"></param>
-        public CarManageController(ILogger<CarManageController> logger, ICarManageRepository _dal)
+        public OwnerManageController(IOwnerManageRepository _dal)
         {
-            _logger = logger;//日志
             dal = _dal;
         }
 
@@ -35,36 +31,33 @@ namespace TMS.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("CarManageIndex")]
-        public IActionResult CarManageIndex()
+        [Route("OwnerManageIndex")]
+        public IActionResult OwnerManageIndex()
         {
             try
             {
-                List<CarManage> list = dal.CarShow();
-                _logger.LogInformation("======{p1}======{p2}======", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff 成功"), list.Count.ToString());
+                List<OwnerManage> list = dal.OwnerManageShow();
                 return Json(list);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogError(ex, "##{p1}## CarManageController-CarManageIndex() Exception", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss 报错啦！！！"));
-                return Json("{'result':'error'}");
                 throw;
             }
-            
+
         }
 
         /// <summary>
-        /// 新增汽车
+        /// 新增
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="owner"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("AddCarManage")]
-        public IActionResult AddCarManage(CarManage car)
+        [Route("AddOwnerManage")]
+        public IActionResult AddOwnerManage(OwnerManage owner)
         {
             try
             {
-                bool result = dal.AddCarManage(car);
+                bool result = dal.AddOwnerManage(owner);
                 return Json(result);
             }
             catch (Exception)
@@ -74,17 +67,17 @@ namespace TMS.API.Controllers
         }
 
         /// <summary>
-        /// 删除操作员
+        /// 删除
         /// </summary>
-        /// <param name="CarManageId"></param>
+        /// <param name="OwnerManageId"></param>
         /// <returns></returns>
-        [Route("CarDel")]
+        [Route("OwnerManageDel")]
         [HttpPost]
-        public IActionResult CarDel(int CarManageId)
+        public IActionResult OwnerManageDel(int OwnerManageId)
         {
             try
             {
-                bool result = dal.DeleteCar(CarManageId);
+                bool result = dal.DeleteOwnerManage(OwnerManageId);
                 return Json(result);
             }
             catch (Exception)
@@ -96,15 +89,15 @@ namespace TMS.API.Controllers
         /// <summary>
         /// 反填
         /// </summary>
-        /// <param name="CarManageId"></param>
+        /// <param name="OwnerManageId"></param>
         /// <returns></returns>
-        [Route("EditCar")]
+        [Route("OwnerManage")]
         [HttpPost]
-        public IActionResult EditCar(int CarManageId)
+        public IActionResult EditOwnerManage(int OwnerManageId)
         {
             try
             {
-                CarManage result = dal.EditCarManage(CarManageId);
+                OwnerManage result = dal.EditOwnerManage(OwnerManageId);
                 return Json(result);
             }
             catch (Exception)
@@ -117,15 +110,15 @@ namespace TMS.API.Controllers
         /// <summary>
         /// 修改
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="owner"></param>
         /// <returns></returns>
-        [Route("UpdateCarManage")]
+        [Route("UpdateOwnerManage")]
         [HttpPost]
-        public IActionResult UpdateCarManage(CarManage car)
+        public IActionResult UpdateOwnerManage(OwnerManage owner)
         {
             try
             {
-                bool result = dal.UpdateCar(car);
+                bool result = dal.UpdateOwnerManage(owner);
                 return Ok(result);
             }
             catch (Exception)
@@ -133,10 +126,5 @@ namespace TMS.API.Controllers
                 return Ok("数据错误");
             }
         }
-
-
-
-
-
     }
 }

@@ -23,7 +23,11 @@ namespace TMS.Repository
             return MySqlDapper.DapperQuery<CarManage>(sql, "");
         }
 
-
+        /// <summary>
+        /// 新增汽车
+        /// </summary>
+        /// <param name="car"></param>
+        /// <returns></returns>
         public bool AddCarManage(CarManage car)
         {
             string sql = "insert into CarManage values(null,@FactoryPlate,@CarPlate,@DriverName,@SubordinateCompany,@Cartype,@CarColor,@BuyDate,@OperationPlate,@InsuranceExpriration,@AnnualInspection,@UpKeepKm,@CarPicture,@UpKeepKmPicture)";
@@ -63,22 +67,23 @@ namespace TMS.Repository
         /// </summary>
         /// <param name="CarManageId"></param>
         /// <returns></returns>
-        public CarManage EditPositionManage(int CarManageId)
+        public CarManage EditCarManage(int CarManageId)
         {
             string sql = $"select * from CarManage where CarManageId={CarManageId}";
             return MySqlDapper.DapperQuery<CarManage>(sql, new { @CarManageId = CarManageId }).FirstOrDefault();
         }
 
         /// <summary>
-        /// 修改该职位
+        /// 修改该汽车
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
         public bool UpdateCar(CarManage car)
         {
-            string sql = "UPDATE CarManage SET @FactoryPlate = car.FactoryPlate,CarPlate = @CarPlate,DriverName = @DriverName,SubordinateCompany =@SubordinateCompany,Cartype = @Cartype,CarColor = @CarColor,BuyDate = @BuyDate,OperationPlate = @OperationPlate,InsuranceExpriration = @InsuranceExpriration,AnnualInspection = @AnnualInspection,UpKeepKm = @UpKeepKm,CarPicture = @CarPicture,UpKeepKmPicture = @UpKeepKmPicture WHERE CarManageId=@CarManageId; ";
+            string sql = "UPDATE CarManage SET FactoryPlate = @FactoryPlate,CarPlate = @CarPlate,DriverName = @DriverName,SubordinateCompany =@SubordinateCompany,Cartype = @Cartype,CarColor = @CarColor,BuyDate = @BuyDate,OperationPlate = @OperationPlate,InsuranceExpriration = @InsuranceExpriration,AnnualInspection = @AnnualInspection,UpKeepKm = @UpKeepKm,CarPicture = @CarPicture,UpKeepKmPicture = @UpKeepKmPicture WHERE CarManageId=@CarManageId; ";
             return MySqlDapper.DapperExcute(sql, new
             {
+                @CarManageId = car.CarManageId,
                 @FactoryPlate = car.FactoryPlate,
                 @CarPlate = car.CarPlate,
                 @DriverName = car.DriverName,

@@ -75,10 +75,6 @@ namespace TMS.API
             #endregion
 
 
-
-
-
-
             #region SQL注入
             //控制器上加SQL注入过滤器
             //services.AddControllers(options =>
@@ -99,17 +95,17 @@ namespace TMS.API
                 c.IncludeXmlComments(xmlPath, true);
             });
             #endregion
-            
+
             #region 跨域
             //添加cors 服务 配置跨域来处理
-            services.AddCors(options => options.AddPolicy("cor",
-            builder =>
-            {
-                builder.AllowAnyMethod()
-                  .AllowAnyHeader()
-                  .SetIsOriginAllowed(_ => true) // =AllowAnyOrigin()
-                  .AllowCredentials();
-            }));
+            services.AddCors(c => {
+                c.AddPolicy("AllRequests", policy => {
+                    policy
+           .WithOrigins("http://192.168.31.231:8080", "http://192.168.31.231:8081")
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+                });
+            });
             #endregion
 
 
@@ -136,7 +132,7 @@ namespace TMS.API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TMS.API v1"));
             }
 
-
+            app.UseCors("AllRequests");
 
             #region 启用JWT(添加认证中间件【必须在授权前面添加】)
             app.UseAuthentication();
@@ -155,9 +151,7 @@ namespace TMS.API
             loggerFactory.AddFile("Logs/log{Date}.txt");
             #endregion
 
-            #region 跨域
-            app.UseCors("AllowAll");
-            #endregion
+         
 
 
             app.UseRouting();
