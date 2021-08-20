@@ -30,7 +30,8 @@ namespace TMS.API.Controllers
         /// 构造函数
         /// </summary>
         /// <param name="_dal"></param>
-        public UsersController(IUsersRepository _dal,JWTService jwt)
+        /// <param name="jwt"></param>
+        public UsersController(IUsersRepository _dal, JWTService jwt)
         {
             dal = _dal;
             _jwt = jwt;
@@ -46,19 +47,18 @@ namespace TMS.API.Controllers
         [HttpGet]
         [Route("LoginIndex")]
         [AllowAnonymous]//不用Jwt验证
-        public IActionResult LoginIndex(string OperatorPhone,string OperatorPwd)
+        public IActionResult LoginIndex(string OperatorPhone, string OperatorPwd)
         {
             try
             {
-                int a=0;
-                List<OperatorManage> list = dal.LoginShow(OperatorPhone,OperatorPwd);
-                var jwt = _jwt.GetToken(OperatorPwd);
-                if (list.Count>0)
+                List<OperatorManage> list = dal.LoginShow(OperatorPhone, OperatorPwd);
+
+                if (list.Count > 0)
                 {
-                    a = 1;
-                  
+                    var jwt = _jwt.GetToken(OperatorPwd);
+                    return Ok(new { code = 200, msg = "登录成功", name = OperatorPhone, token = jwt });
                 }
-                return Json(a);
+                return Ok(new { code = 500, msg = "登录失败", name = OperatorPhone, token = "" });
             }
             catch (Exception)
             {

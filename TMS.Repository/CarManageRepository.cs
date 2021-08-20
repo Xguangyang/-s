@@ -23,6 +23,40 @@ namespace TMS.Repository
             return MySqlDapper.DapperQuery<CarManage>(sql, "");
         }
 
+
+        public List<CarManage> CarShowPage()
+        {
+            using (IDbConnection conn = new MySqlConnection(DbFactory.DbConString))
+            {
+                string readSp = $"select * from CarManage";
+                return conn.Query<CarManage>(readSp, commandType: CommandType.StoredProcedure).ToList();
+            }
+          
+        }
+
+
+        /// <summary>
+        /// 存储过程分页+状态查询
+        /// </summary>
+        /// <param name="status">状态查询</param>
+        /// <param name="pageIndex">当期第几页</param>
+        /// <param name="pageSize">每页几条数据</param>
+        /// <param name="totalCount">总计数量</param>
+        /// <returns></returns>
+        public List<CarManage> GeCarManagePage(int pageIndex, int pageSize, out int totalCount)
+        {
+            DynamicParameters dynamic = new DynamicParameters();//动态参数       
+            dynamic.Add("_pageIndex", pageIndex, DbType.Int32);
+            dynamic.Add("_pageSize", pageSize, DbType.Int32);
+            dynamic.Add("_totalCount", null, DbType.Int32, ParameterDirection.Output);//输出型
+            //调用存储过程
+            var data = MySqlDapper.DapperQuery<CarManage>("sp_viewpage", dynamic, true).ToList();
+            //拿到总计数量
+            totalCount = dynamic.Get<int>("_totalCount");
+            return data;
+        }
+
+
         /// <summary>
         /// 新增汽车
         /// </summary>

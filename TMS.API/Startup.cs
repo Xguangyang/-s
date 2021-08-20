@@ -21,6 +21,7 @@ using TMS.Common.Filter;
 using Serilog.Extensions.Logging.File;
 using Microsoft.IdentityModel.Tokens;
 using TMS.Common.JWT;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace TMS.API
 {
@@ -93,6 +94,22 @@ namespace TMS.API
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 // 添加控制器层注释，true表示显示控制器注释
                 c.IncludeXmlComments(xmlPath, true);
+
+                #region swagger用JWT验证
+                //开启权限小锁
+                c.OperationFilter<AddResponseHeadersFilter>();
+                c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                //在header中添加token，传递到后台
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
+                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传递)直接在下面框中输入Bearer {token}(注意两者之间是一个空格) \"",
+                    Name = "Authorization",// t默认的参数名称
+                    In = ParameterLocation.Header,// t默认存放Authorization信息的位置(请求头中)
+                    Type = SecuritySchemeType.ApiKey
+                });
+                #endregion
+
             });
             #endregion
 
@@ -104,8 +121,13 @@ namespace TMS.API
            .WithOrigins("http://192.168.31.231:8080", "http://192.168.31.231:8081")
            .AllowAnyMethod()
            .AllowAnyHeader();
+
+                    
+
                 });
-            });
+
+            }    
+            );
             #endregion
 
 

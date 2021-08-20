@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\Personnel\" />
     <Folder Include="Entity\Contract\" />
     <Folder Include="Entity\CloseAccount\" />
     <Folder Include="Entity\GoodsMaterial\" />

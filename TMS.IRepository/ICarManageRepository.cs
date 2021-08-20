@@ -15,6 +15,9 @@ namespace TMS.IRepository
         /// <returns></returns>
         List<CarManage> CarShow();
 
+        List<CarManage> GeCarManagePage(int pageIndex, int pageSize, out int totalCount);
+
+
         /// <summary>
         /// 新增汽车
         /// </summary>

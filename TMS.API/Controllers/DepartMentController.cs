@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace TMS.API.Controllers
     /// <summary>
     /// 部门管理
     /// </summary>
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("DepartMentApi")]
     public class DepartMentController : Controller

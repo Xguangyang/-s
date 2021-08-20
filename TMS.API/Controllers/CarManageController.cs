@@ -14,7 +14,7 @@ namespace TMS.API.Controllers
     /// 车辆管理
     /// </summary>
     [ApiController]
-    //[Authorize]
+   // [Authorize]
     [Route("CarManageApi")]
     public class CarManageController : Controller
     {
@@ -52,6 +52,36 @@ namespace TMS.API.Controllers
             }
             
         }
+
+        /// <summary>
+        /// 砍价商品信息
+        /// </summary>
+        /// <param name="pageIndex">第几页</param>
+        /// <param name="pageSize">每页几条数据</param>
+        /// <returns></returns>
+        [Route("Proc_Page")]
+        [HttpGet]
+        public IActionResult Proc_Page(int pageIndex = 1, int pageSize = 10)
+        {
+            try
+            {
+                int totalCount;
+                List<CarManage> car = dal.GeCarManagePage(pageIndex, pageSize, out totalCount);
+
+                ////实例化返回数据
+                //ResultDataModel<CarManage> result = new ResultDataModel<CarManage>();
+                //result.code = true;
+                //result.data = bargainirgs;//数据集
+                return Json(car);
+            }
+            catch (Exception)
+            {
+                return Ok("数据错误");
+            }
+        }
+
+
+
 
         /// <summary>
         /// 新增汽车
