@@ -55,7 +55,7 @@ namespace TMS.API.Controllers
 
                 if (list.Count > 0)
                 {
-                    var jwt = _jwt.GetToken(OperatorPwd);
+                    var jwt = _jwt.GetToken(OperatorPhone);
                     return Ok(new { code = 200, msg = "登录成功", name = OperatorPhone, token = jwt });
                 }
                 return Ok(new { code = 500, msg = "登录失败", name = OperatorPhone, token = "" });

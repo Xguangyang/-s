@@ -5,12 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\Contract\" />
     <Folder Include="Entity\CloseAccount\" />
     <Folder Include="Entity\GoodsMaterial\" />
-    <Folder Include="Entity\MainTain\" />
     <Folder Include="Entity\TailAfter\" />
-    <Folder Include="Entity\ApprovalProcess\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Model\" />
   </ItemGroup>

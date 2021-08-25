@@ -46,7 +46,7 @@ namespace TMS.API
         public void ConfigureServices(IServiceCollection services)
         {
             
-            #region JWT配置
+             #region JWT配置
               services.AddAuthentication(options => {
                      //认证middleware配置
                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -60,7 +60,7 @@ namespace TMS.API
                      //被授权者
                      ValidateAudience = true,
                      ValidAudience = Configuration["JwtSetting:Audience"],
-                     //秘钥
+                     //秘钥（解密）
                      ValidateIssuerSigningKey = true,
                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSetting:SecretKey"])),
                      //是否验证失效时间【使用当前时间与Token的Claims中NotBefore和Expires对比】

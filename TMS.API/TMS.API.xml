@@ -57,6 +57,51 @@
             <param name="car"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.CarrierContractController">
+            <summary>
+            承运合同管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.#ctor(TMS.IRepository.ICarrierContractRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.CarrierContractIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.AddCarrierContract(TMS.Model.Entity.Contract.CarrierContract)">
+            <summary>
+            新增
+            </summary>
+            <param name="carrier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.CarrierContractDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="CarrierContractId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.EditEditcarrier(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="CarrierContractId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.CarrierContractController.UpdateCarrierContract(TMS.Model.Entity.Contract.CarrierContract)">
+            <summary>
+            修改
+            </summary>
+            <param name="carrier"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.DepartMentController">
             <summary>
             部门管理
@@ -106,6 +151,96 @@
             <summary>
             测试异常处理
             </summary>
+        </member>
+        <member name="T:TMS.API.Controllers.ExitManageController">
+            <summary>
+            离职管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.#ctor(TMS.IRepository.IExitManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.ExitManageIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.AddExitManage(TMS.Model.Entity.Personnel.ExitManage)">
+            <summary>
+            新增
+            </summary>
+            <param name="exit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.ExitManageDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="ExitManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.EditExitManage(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="ExitManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.ExitManageController.UpdateExitManage(TMS.Model.Entity.Personnel.ExitManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="exit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.MainTainController">
+            <summary>
+            维修管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.#ctor(TMS.IRepository.IMainTainRopository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.MainTainIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.AddMainTain(TMS.Model.Entity.MainTain.ServiceManage)">
+            <summary>
+            新增
+            </summary>
+            <param name="service"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.MainTainDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="ServiceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.EditMainTain(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="ServiceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.MainTainController.UpdateMainTain(TMS.Model.Entity.MainTain.ServiceManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="service"></param>
+            <returns></returns>
         </member>
         <member name="T:TMS.API.Controllers.OperatorManageController">
             <summary>
@@ -194,6 +329,51 @@
             修改
             </summary>
             <param name="outSource"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.OwnerContractController">
+            <summary>
+            货主合同管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.#ctor(TMS.IRepository.IOwnerContractRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.OwnerContractIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.AddOwnerContract(TMS.Model.Entity.Contract.OwnerContract)">
+            <summary>
+            新增
+            </summary>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.OwnerContractDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="OwnerContractId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.EditOwnerContract(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="OwnerContractId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OwnerContractController.UpdateOwnerContract(TMS.Model.Entity.Contract.OwnerContract)">
+            <summary>
+            修改
+            </summary>
+            <param name="owner"></param>
             <returns></returns>
         </member>
         <member name="T:TMS.API.Controllers.OwnerManageController">
@@ -285,6 +465,51 @@
             <param name="position"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.RegularManageController">
+            <summary>
+            转正管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.#ctor(TMS.IRepository.IRegularManageRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.RegularManageIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.AddRegularManage(TMS.Model.Entity.Personnel.RegularManage)">
+            <summary>
+            新增
+            </summary>
+            <param name="regular"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.RegularManageDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="RegularManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.EditEditDepart(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="RegularManageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.RegularManageController.UpdateRole(TMS.Model.Entity.Personnel.RegularManage)">
+            <summary>
+            修改
+            </summary>
+            <param name="regular"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.RoleModelController">
             <summary>
             角色管理
@@ -340,11 +565,57 @@
             构造函数
             </summary>
             <param name="_dal"></param>
+            <param name="jwt"></param>
         </member>
         <member name="M:TMS.API.Controllers.UsersController.LoginIndex(System.String,System.String)">
             <summary>
             操作员列表（显示）
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.UsersInfoController">
+            <summary>
+            员工登记
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.#ctor(TMS.IRepository.IUsersInfoRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.UsersInfoIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.AddUsersInfo(TMS.Model.Entity.Personnel.UsersInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name="users"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.UsersInfoDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="UsersInfoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.EditUsersInfo(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="UsersInfoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.UsersInfoController.UpdateUsersInfo(TMS.Model.Entity.Personnel.UsersInfo)">
+            <summary>
+            修改
+            </summary>
+            <param name="depart"></param>
             <returns></returns>
         </member>
         <member name="T:TMS.API.Controllers.WeatherForecastController">
