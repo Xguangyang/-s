@@ -22,6 +22,7 @@ using Serilog.Extensions.Logging.File;
 using Microsoft.IdentityModel.Tokens;
 using TMS.Common.JWT;
 using Swashbuckle.AspNetCore.Filters;
+using TMS.Common.Redis;
 
 namespace TMS.API
 {
@@ -135,7 +136,18 @@ namespace TMS.API
             DbFactory.DbConString = Configuration.GetConnectionString("MySql");
             #endregion
 
-
+            #region  Redis
+            //redis缓存
+            var section = Configuration.GetSection("Redis:Default");
+            //连接字符串
+            string _connectionString = section.GetSection("Connection").Value;
+            //实例名称
+            string _instanceName = section.GetSection("InstanceName").Value;
+            //默认数据库 
+            int _defaultDB = int.Parse(section.GetSection("DefaultDB").Value ?? "0");
+            services.AddSingleton(new RedisHelper(_connectionString, _instanceName, _defaultDB));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            #endregion
 
             services.AddControllers(options =>
             {

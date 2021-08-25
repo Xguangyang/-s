@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\CloseAccount\" />
-    <Folder Include="Entity\GoodsMaterial\" />
-    <Folder Include="Entity\TailAfter\" />
     <Folder Include="ViewModel\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>
