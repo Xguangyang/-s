@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMS.Common.Redis;
 using TMS.IRepository;
 using TMS.Model.Entity.Set;
 

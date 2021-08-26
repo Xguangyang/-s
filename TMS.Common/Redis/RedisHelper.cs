@@ -25,6 +25,10 @@ namespace TMS.Common.Redis
             _connections = new ConcurrentDictionary<string, ConnectionMultiplexer>();
         }
 
+        public RedisHelper()
+        {
+        }
+
         /// <summary>
         /// 获取ConnectionMultiplexer
         /// </summary>
