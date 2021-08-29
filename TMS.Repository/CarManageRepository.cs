@@ -7,7 +7,7 @@ using System.Linq;
 using TMS.Common.DB;
 using TMS.IRepository;
 using TMS.Model.Entity.BaseInfo;
-using TMS.Common.DB;
+
 
 namespace TMS.Repository
 {

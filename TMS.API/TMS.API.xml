@@ -287,6 +287,51 @@
             <param name="exit"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.GoodReceiveController">
+            <summary>
+            物资领用
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.#ctor(TMS.IRepository.IGoodReceiveRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.GoodReceiveIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.AddGoodReceive(TMS.Model.GoodReceive)">
+            <summary>
+            新增
+            </summary>
+            <param name="receivable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.GoodReceiveDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="GoodReceiveId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.EditGoodReceive(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="GoodReceiveId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.GoodReceiveController.UpdateGoodReceive(TMS.Model.GoodReceive)">
+            <summary>
+            修改
+            </summary>
+            <param name="exit"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.MainTainController">
             <summary>
             维修管理
@@ -555,6 +600,51 @@
             <param name="position"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.PurchaseController">
+            <summary>
+            物资采购
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.#ctor(TMS.IRepository.IPurchaseRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.PurchaseIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.AddPurchase(TMS.Model.Purchase)">
+            <summary>
+            新增
+            </summary>
+            <param name="receivable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.PurchaseDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="PurchaseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.EditPurchase(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="PurchaseId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.PurchaseController.UpdatePurchase(TMS.Model.Purchase)">
+            <summary>
+            修改
+            </summary>
+            <param name="exit"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.ReceivableController">
             <summary>
             应收费用管理
@@ -693,6 +783,51 @@
             修改
             </summary>
             <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TMS.API.Controllers.StockController">
+            <summary>
+            入库管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.#ctor(TMS.IRepository.IStockRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.StockIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.AddStock(TMS.Model.Stock)">
+            <summary>
+            新增
+            </summary>
+            <param name="receivable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.StockDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="StockId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.EditStock(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="StockId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.StockController.UpdateStock(TMS.Model.Stock)">
+            <summary>
+            修改
+            </summary>
+            <param name="exit"></param>
             <returns></returns>
         </member>
         <member name="T:TMS.API.Controllers.UsersController">
