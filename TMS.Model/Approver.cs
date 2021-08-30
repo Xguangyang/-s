@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TMS.Model.Entity.ApprovalProcess
 {
+    /// <summary>
+    /// 审批记录
+    /// </summary>
     public class Approver
     {
         /// <summary>

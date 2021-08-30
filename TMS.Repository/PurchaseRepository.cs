@@ -9,6 +9,9 @@ using TMS.Model;
 
 namespace TMS.Repository
 {
+    /// <summary>
+    /// 物资采购--审批
+    /// </summary>
     public class PurchaseRepository: IPurchaseRepository
     {
         /// <summary>

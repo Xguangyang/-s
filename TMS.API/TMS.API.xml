@@ -421,6 +421,51 @@
             <param name="operatorManage"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS.API.Controllers.OutputInvoiceController">
+            <summary>
+            销项发票管理
+            </summary>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.#ctor(TMS.IRepository.IOutputInvoiceRepository)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_dal"></param>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.OutputInvoiceIndex">
+            <summary>
+            显示列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.AddOutputInvoice(TMS.Model.OutputInvoice)">
+            <summary>
+            新增
+            </summary>
+            <param name="receivable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.OutputInvoiceDel(System.Int32)">
+            <summary>
+            删除
+            </summary>
+            <param name="OutputInvoiceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.EditOutputInvoice(System.Int32)">
+            <summary>
+            反填
+            </summary>
+            <param name="OutputInvoiceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS.API.Controllers.OutputInvoiceController.UpdateOutputInvoice(TMS.Model.OutputInvoice)">
+            <summary>
+            修改
+            </summary>
+            <param name="exit"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS.API.Controllers.OutSourceManageController">
             <summary>
             外协管理

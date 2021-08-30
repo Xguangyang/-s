@@ -9,8 +9,14 @@ using TMS.Model;
 
 namespace TMS.Repository
 {
+    /// <summary>
+    /// 应付费用管理
+    /// </summary>
     public class AccountsPayableRepository: IAccountsPayableRepository
     {
+
+        
+
         /// <summary>
         /// 显示
         /// </summary>
