@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\实训二\项目\TMS后端\TMS.Web\TMS.API\TMS.API.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\86152\Desktop\TMS\TMS.API\TMS.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
