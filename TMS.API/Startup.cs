@@ -140,7 +140,8 @@ namespace TMS.API
             //redis缓存
             var section = Configuration.GetSection("Redis:Default");
             //连接字符串
-            string _connectionString = section.GetSection("Connection").Value;
+            //string _connectionString = section.GetSection("Connection").Value;
+            string _connectionString = DbFactory.DbConString;
             //实例名称
             string _instanceName = section.GetSection("InstanceName").Value;
             //默认数据库 

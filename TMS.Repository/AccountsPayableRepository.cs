@@ -51,6 +51,8 @@ namespace TMS.Repository
                 @CreateName = exit.CreateName,
                 @ReceivableDate = exit.ReceivableDate
             });
+
+           
         }
 
 
